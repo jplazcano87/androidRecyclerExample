@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import spaceghost.com.spaceghostradio.R;
+import spaceghost.com.spaceghostradio.adapters.StationsAdapter;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -65,11 +66,14 @@ public class MainFragment extends Fragment {
     StationsFragment stationsFragment1;
     StationsFragment stationsFragment2;
     StationsFragment stationsFragment3;
-    stationsFragment1 = StationsFragment.newInstance("bla", "bla");
+    stationsFragment1 = StationsFragment.newInstance(StationsFragment.StationType
+        .STATION_TYPE_FEATURED.ordinal());
     fragmentManager.beginTransaction().add(R.id.container_top_row, stationsFragment1).commit();
-    stationsFragment2 = StationsFragment.newInstance("bla", "bla");
+    stationsFragment2 = StationsFragment.newInstance(StationsFragment.StationType
+        .STATION_TYPE_RECENT.ordinal());
     fragmentManager.beginTransaction().add(R.id.container_mid_row, stationsFragment2).commit();
-    stationsFragment3 = StationsFragment.newInstance("bla", "bla");
+    stationsFragment3 = StationsFragment.newInstance(StationsFragment.StationType
+        .STATION_TYPE_PARTY.ordinal());
     fragmentManager.beginTransaction().add(R.id.container_bottom_row, stationsFragment3).commit();
 
 
